@@ -3,8 +3,10 @@ import ProductCard from "./ProductCard";
 import "./Products.scss";
 import { products, categories } from "../../helper/data";
 import { Header } from "../header/Header";
+import { useState } from "react";
 
 const ProductsList = () => {
+  const [productData, setProductData] = useState(products)
   return (
     <>
       <Header categories={categories} />
@@ -15,7 +17,10 @@ const ProductsList = () => {
       />
       <Container className="product-list rounded-4 my-4 p-3">
         <Row className="g-3 justify-content-center">
-          <ProductCard />
+          {productData.map((product)=>(
+ <ProductCard {...product} key={product.id} />
+          ))}
+         
         </Row>
       </Container>
     </>
