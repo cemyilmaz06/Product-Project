@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const ProductsList = () => {
   const [productData, setProductData] = useState(products)
+  const [search, setSearch] = useState("")
   return (
     <>
       <Header categories={categories} />
@@ -14,10 +15,11 @@ const ProductsList = () => {
         placeholder="Search Product..."
         type="search"
         className="w-50 m-auto"
+        onChange={(e)=>setSearch(e.target.value)}
       />
       <Container className="product-list rounded-4 my-4 p-3">
         <Row className="g-3 justify-content-center">
-          {productData.map((product)=>(
+          {productData.filter((item)=>item.title.toLowerCase().includes(search.toLowerCase().trim())).map((product)=>(
  <ProductCard {...product} key={product.id} />
           ))}
          
