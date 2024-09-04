@@ -8,9 +8,17 @@ import { useState } from "react";
 const ProductsList = () => {
   const [productData, setProductData] = useState(products)
   const [search, setSearch] = useState("")
+const handleClick=(category)=>{
+  if(category === "all"){
+    setProductData(products);
+  }else{
+    const filteredProduct=()=>(products.filter((product)=>product.category === category))
+    setProductData(filteredProduct);
+  }
+}
   return (
     <>
-      <Header categories={categories} />
+      <Header categories={categories} handleClick={handleClick}/>
       <Form.Control
         placeholder="Search Product..."
         type="search"
