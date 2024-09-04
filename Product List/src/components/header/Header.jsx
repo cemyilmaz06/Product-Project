@@ -10,7 +10,7 @@ export const Header = () => {
         direction="vertical"
         gap={3}
         className="btns justify-content-center flex-md-row"
-      >
+      > 
         Category Buttons
       </Stack>
     </Container>
