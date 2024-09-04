@@ -4,7 +4,7 @@ import { MdFavorite } from "react-icons/md";
 
 const ProductCard = ({id,image,title,price}) => {
   return (
-    <Card className="rounded-2 m-auto card" role="button">
+    <Card className="rounded-2 m-auto card mb-5" role="button">
       <Card.Header className="d-flex justify-content-between">
         <Card.Title>{price}</Card.Title>
         <MdFavorite size={30} />

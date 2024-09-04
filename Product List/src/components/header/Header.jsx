@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Stack } from "react-bootstrap";
+import { Container, Stack } from "react-bootstrap";
 import "./Header.scss";
 
 export const Header = ({categories,handleClick}) => {
