@@ -7,7 +7,7 @@ import { Header } from "../header/Header";
 const ProductsList = () => {
   return (
     <>
-      <Header />
+      <Header categories={categories} />
       <Form.Control
         placeholder="Search Product..."
         type="search"
